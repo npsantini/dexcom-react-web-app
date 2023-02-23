@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 const client_id = process.env.CLIENT_ID;
 // const client_secret = process.env.CLIENT_SECRET;
 
-const loginUrl = "https://sandbox-api.dexcom.com/v2/oauth2/login?client_id=" + client_id + "%26redirect_uri=https://dexcom-react-web-app.herokuapp.com/login-success%26response_type=code%26scope=offline_access%26state=test";
+const loginUrl = decodeURIComponent("https://sandbox-api.dexcom.com/v2/oauth2/login?client_id=" + client_id + "%26redirect_uri=https://dexcom-react-web-app.herokuapp.com/login-success%26response_type=code%26scope=offline_access%26state=test");
 
 
 export default function Login() {
