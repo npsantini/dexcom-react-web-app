@@ -2,6 +2,12 @@ import Link from 'next/link';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
+const client_id = process.env.CLIENT_ID;
+// const client_secret = process.env.CLIENT_SECRET;
+
+const loginUrl = "https://sandbox-api.dexcom.com/v2/oauth2/login?client_id=" + client_id + "&redirect_uri=https://dexcom-react-web-app.herokuapp.com/login-success/&response_type=code&scope=offline_access";
+
+
 export default function Login() {
     return (
       <div className={styles.container}>
@@ -17,6 +23,8 @@ export default function Login() {
   
           <p className={styles.description}>
             Get started by logging in.
+            <br/>
+            <a href={loginUrl}>Log in</a>
             <br/>
             <Link href="/">Home Page</Link>
           </p>
